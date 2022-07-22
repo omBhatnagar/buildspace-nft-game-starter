@@ -8,7 +8,6 @@ import LoadingIndicator from "../LoadingIndicator";
 const SelectCharacter = ({ setCharacterNft }) => {
 	const [characters, setCharacters] = useState([]);
 	const [gameContract, setGameContract] = useState(null);
-	const [characterNft, setCharacterNFT] = useState({});
 	const [mintingCharacter, setMintingCharacter] = useState(false);
 
 	useEffect(() => {
@@ -50,7 +49,7 @@ const SelectCharacter = ({ setCharacterNft }) => {
 			if (gameContract) {
 				const characterNFT = await gameContract.checkIfUserHasNFT();
 				console.log("CharacterNFT: ", characterNFT);
-				setCharacterNFT(transformCharacterData(characterNFT));
+				setCharacterNft(transformCharacterData(characterNFT));
 			}
 		};
 
